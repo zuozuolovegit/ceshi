@@ -2,7 +2,7 @@
 var express = require('express');
 var cheerio = require('cheerio');
 var superagent = require('superagent');
-var Content = require('./model.js');
+// var Content = require('./model.js');
 
 // 建立 express 实例
 var app = express();
@@ -29,18 +29,18 @@ app.get('/', function(req, res, next) {
         });
       });
 
-      Content.create(items, function(err, docs) {
-          if (err) {
-            // TODO: handle error
-          } else {
-            console.info('%d potatoes were successfully stored.', docs.length);
-          }
-        })
-        // Content.create(items,
-        //   function(err, user) {
-        //     if (err) return next(err); // 交给接下来的错误处理中间件
-        //     res.status(201).end('注册成功'); // 存储成功
-        //   });
+      // Content.create(items, function(err, docs) {
+      //     if (err) {
+      //       // TODO: handle error
+      //     } else {
+      //       console.info('%d potatoes were successfully stored.', docs.length);
+      //     }
+      //   })
+      // Content.create(items,
+      //   function(err, user) {
+      //     if (err) return next(err); // 交给接下来的错误处理中间件
+      //     res.status(201).end('注册成功'); // 存储成功
+      //   });
       res.send(items);
     });
 });
